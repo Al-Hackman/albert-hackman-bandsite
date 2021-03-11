@@ -1,0 +1,15 @@
+@use "./partials/typography" as *;
+@use "./partials/mixins" as *;
+@use "./partials/variables" as *;
+
+
+
+html{
+    font-family: 'Avenir Next';
+}
+
+.navbar{
+    background-color: $primary-background;
+    width: 100vw;
+    height:80px;
+}

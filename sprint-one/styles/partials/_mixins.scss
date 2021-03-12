@@ -1,14 +1,14 @@
 
 @mixin hero-header {
-    font-size: 3.75rem;
+    font-size: 2.75rem;
     line-height: 4.25rem;   
-    font-weight: bold;
+    font-weight: 500;
 }
 
 @mixin header {
     font-size: 2.25rem;
     line-height: 2.75rem;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 @mixin lower-header {
@@ -20,4 +20,20 @@
     font-size: 1rem;
     line-height: 1.5rem;
     font-weight: 500;
+}
+@mixin mob-header {
+    font-size: 1.3rem;
+    line-height: 2rem;
+    font-family: 'Avenir Next';
+    font-weight: bold;
+}
+@mixin mob-sub-header {
+    font-size: 0.87rem;
+    line-height: 1.37rem;
+    font-weight: bold;
+}
+@mixin mob-paragraph {
+    font-size: 0.82rem;
+    line-height: 1.13rem;
+    font-weight: normal;
 }

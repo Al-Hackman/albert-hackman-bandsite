@@ -8,8 +8,140 @@ html{
     font-family: 'Avenir Next';
 }
 
+body{
+    margin: 0px;
+}
 .navbar{
     background-color: $primary-background;
     width: 100vw;
-    height:80px;
+    height:5rem;
+    &__head{
+        text-align: center;
+    }
+    &__logo{
+        // box-sizing: border-box;
+        padding: 0.5rem 0px;
+        @include header;
+        // height: 3rem;
+    }
+    &__items{
+        margin: 0px;
+        padding: 0px;
+        display: flex;
+        justify-content:space-evenly;
+        @include lower-header;
+        // box-sizing: border-box;
+        // height: 2rem;
+    }
+    &__list{
+        list-style-type: none;
+        font-weight: 500;
+        color: $text-label;
+        width: 50%;
+        text-align: center;
+    }
+}
+
+.hero{
+    background: url(../assets/images/hero.jpg);
+    height: 11.4rem;
+    background-position: center;
+    background-size: cover;
+    opacity: 50%;
+    display: flex;
+    align-items: center;
+
+    &__header{
+        margin: 0px;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        padding-left: 1rem;
+        color: $secondary-background;
+    }
+}
+
+.musicians{
+    margin: 0px 1rem;
+    @include mob-header;
+
+    &__about{
+        margin:2rem 0px 1.5rem 0px;
+    }
+    &__img{
+        width: 100%;
+        height: 9rem;
+    }
+    &__quote{
+        margin: 1.5rem 0px 2rem 0px;
+        @include mob-sub-header;
+    }
+    &__quote-name{
+        @include mob-sub-header;
+        margin-bottom: 2.5rem;
+    }
+    &__biography{
+        @include mob-paragraph;
+    }
+    &_biography-1{
+        margin:0px 0px 1.5rem 0px;
+    }
+    &__biography-2{
+        margin: 0px 0px 2.5rem 0px;
+    }
+}
+
+.gallery{
+    background-color: $text-field-background;
+    margin: 0px 1rem;
+
+    &__title{
+        padding: 2rem 0px 1.5rem 0px;
+        margin: 0px;
+    }
+    &__photo{
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}
+
+.footer{
+    background-color: $primary-background;
+    color: $secondary-background;
+
+    &__header{
+        margin: 0px 1rem 0px 0.7rem
+    }
+    &__head{
+        padding:2rem 0px;
+        margin: 0px;
+        @include mob-header;
+    }
+    &__links{
+        padding: 0px;
+        margin:0px;
+        list-style: none;
+        display: flex;
+        justify-content:flex-start
+    }
+    &__link{
+        padding-right: 2rem;
+    }
+    &__logo{
+        display: none;
+    }
+    &__contacts{
+        margin: 0px 1rem 0px 0.7rem;
+    }
+    &__compname{
+        @include mob-sub-header;
+    }
+    &__address, &__copyright{
+        @include mob-paragraph;
+        font-weight: 300;
+        color: $text-field-border;
+    }
+    &__bottom{
+        margin: 0px 1rem 0px 0.7rem;
+        padding-bottom: 3rem;
+    }
 }

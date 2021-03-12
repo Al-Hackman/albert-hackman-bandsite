@@ -16,8 +16,153 @@ html {
   font-family: "Avenir Next";
 }
 
+body {
+  margin: 0px;
+}
+
 .navbar {
   background-color: #323232;
   width: 100vw;
-  height: 80px;
+  height: 5rem;
+}
+.navbar__head {
+  text-align: center;
+}
+.navbar__logo {
+  padding: 0.5rem 0px;
+  font-size: 2.25rem;
+  line-height: 2.75rem;
+  font-weight: 700;
+}
+.navbar__items {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: bold;
+}
+.navbar__list {
+  list-style-type: none;
+  font-weight: 500;
+  color: #afafaf;
+  width: 50%;
+  text-align: center;
+}
+
+.hero {
+  background: url(../assets/images/hero.jpg);
+  height: 11.4rem;
+  background-position: center;
+  background-size: cover;
+  opacity: 50%;
+  display: flex;
+  align-items: center;
+}
+.hero__header {
+  margin: 0px;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  padding-left: 1rem;
+  color: #ffffff;
+}
+
+.musicians {
+  margin: 0px 1rem;
+  font-size: 1.3rem;
+  line-height: 2rem;
+  font-family: "Avenir Next";
+  font-weight: bold;
+}
+.musicians__about {
+  margin: 2rem 0px 1.5rem 0px;
+}
+.musicians__img {
+  width: 100%;
+  height: 9rem;
+}
+.musicians__quote {
+  margin: 1.5rem 0px 2rem 0px;
+  font-size: 0.87rem;
+  line-height: 1.37rem;
+  font-weight: bold;
+}
+.musicians__quote-name {
+  font-size: 0.87rem;
+  line-height: 1.37rem;
+  font-weight: bold;
+  margin-bottom: 2.5rem;
+}
+.musicians__biography {
+  font-size: 0.82rem;
+  line-height: 1.13rem;
+  font-weight: normal;
+}
+.musicians_biography-1 {
+  margin: 0px 0px 1.5rem 0px;
+}
+.musicians__biography-2 {
+  margin: 0px 0px 2.5rem 0px;
+}
+
+.gallery {
+  background-color: #fafafa;
+  margin: 0px 1rem;
+}
+.gallery__title {
+  padding: 2rem 0px 1.5rem 0px;
+  margin: 0px;
+}
+.gallery__photo {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.footer {
+  background-color: #323232;
+  color: #ffffff;
+}
+.footer__header {
+  margin: 0px 1rem 0px 0.7rem;
+}
+.footer__head {
+  padding: 2rem 0px;
+  margin: 0px;
+  font-size: 1.3rem;
+  line-height: 2rem;
+  font-family: "Avenir Next";
+  font-weight: bold;
+}
+.footer__links {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+}
+.footer__link {
+  padding-right: 2rem;
+}
+.footer__logo {
+  display: none;
+}
+.footer__contacts {
+  margin: 0px 1rem 0px 0.7rem;
+}
+.footer__compname {
+  font-size: 0.87rem;
+  line-height: 1.37rem;
+  font-weight: bold;
+}
+.footer__address, .footer__copyright {
+  font-size: 0.82rem;
+  line-height: 1.13rem;
+  font-weight: normal;
+  font-weight: 300;
+  color: #e1e1e1;
+}
+.footer__bottom {
+  margin: 0px 1rem 0px 0.7rem;
+  padding-bottom: 3rem;
 }/*# sourceMappingURL=main.css.map */

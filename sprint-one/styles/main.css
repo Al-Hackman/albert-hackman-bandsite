@@ -26,10 +26,12 @@ body {
   height: 5rem;
 }
 .navbar__head {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .navbar__logo {
-  padding: 0.5rem 0px;
+  padding: 1rem 0px 0.8rem;
   font-size: 2.25rem;
   line-height: 2.75rem;
   font-weight: 700;
@@ -61,6 +63,10 @@ body {
   .navbar__head {
     text-align: left;
     margin-right: 3.5rem;
+  }
+  .navbar__items {
+    height: 80px;
+    align-items: center;
   }
   .navbar__list {
     text-align: left;
@@ -182,7 +188,7 @@ body {
     margin: 0px 5.75rem;
   }
   .musicians__img {
-    width: 56rem;
+    width: 100%;
     height: 28.125rem;
   }
   .musicians__quote {
@@ -228,7 +234,8 @@ body {
 }
 @media (min-width: 1440px) {
   .gallery {
-    margin: 0px 11.25rem;
+    padding: 0px 11.25rem 2.5rem;
+    margin: 0px;
   }
   .gallery__title {
     padding: 3rem 0px 4rem 0px;
@@ -242,9 +249,7 @@ body {
 .footer {
   background-color: #323232;
   color: #ffffff;
-}
-.footer__header {
-  margin: 0px 1rem 0px 0.7rem;
+  padding: 0px 1rem 3rem 0.7rem;
 }
 .footer__head {
   padding: 2rem 0px;
@@ -267,9 +272,6 @@ body {
 .footer__logo {
   display: none;
 }
-.footer__contacts {
-  margin: 0px 1rem 0px 0.7rem;
-}
 .footer__compname {
   font-size: 0.87rem;
   line-height: 1.37rem;
@@ -282,13 +284,11 @@ body {
   font-weight: 300;
   color: #e1e1e1;
 }
-.footer__bottom {
-  margin: 0px 1rem 0px 0.7rem;
-  padding-bottom: 3rem;
-}
 @media (min-width: 768px) {
+  .footer {
+    padding: 0px 1.5rem 3rem;
+  }
   .footer__header {
-    margin: 0px 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -301,18 +301,49 @@ body {
   }
   .footer__links {
     width: 30%;
-    justify-content: center;
-  }
-  .footer__link {
-    padding: 0px 1.5rem;
+    justify-content: flex-start;
   }
   .footer__logo {
     display: flex;
-    width: 30%;
+    width: 15%;
   }
   .footer__contacts {
-    margin: 0px 1.5rem;
     display: flex;
     justify-content: space-between;
+  }
+}
+@media (min-width: 1440px) {
+  .footer {
+    padding: 0px 11.25rem 3rem;
+  }
+  .footer__contacts {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .footer__contact {
+    margin-right: 8rem;
+  }
+  .footer__header {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .footer__head {
+    padding: 3rem 0px 3.5rem 0px;
+  }
+  .footer__logo {
+    width: 120px;
+    height: 24px;
+  }
+  .footer__links {
+    width: 60%;
+  }
+  .footer__compname h3 {
+    margin: 0px;
+  }
+  .footer__address h4 {
+    margin: 1.5rem 0px;
+  }
+  .footer__copyright h4 {
+    margin: 0px 0px 2.5rem;
   }
 }/*# sourceMappingURL=main.css.map */

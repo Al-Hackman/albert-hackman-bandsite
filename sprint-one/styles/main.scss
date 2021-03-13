@@ -17,10 +17,12 @@ body{
     height:5rem;
     
     &__head{
-        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     &__logo{
-        padding: 0.5rem 0px;
+        padding: 1rem 0px 0.8rem;
         @include header;
     }
     &__items{
@@ -47,6 +49,10 @@ body{
     &__head{
         text-align: left;
         margin-right: 3.5rem;
+    }
+    &__items{
+        height: 80px;
+        align-items: center;
     }
     &__list{
         text-align: left;
@@ -154,7 +160,7 @@ body{
         margin: 0px 5.75rem;
     }
     &__img{
-        width: 56rem;
+        width: 100%;
         height: 28.125rem; 
     }
     &__quote{
@@ -200,7 +206,8 @@ body{
     }
 
     @include desktop{
-        margin: 0px 11.25rem;
+        padding: 0px 11.25rem 2.5rem;
+        margin: 0px;
     &__title{
         padding: 3rem 0px 4rem 0px;
     }
@@ -214,10 +221,7 @@ body{
 .footer{
     background-color: $primary-background;
     color: $secondary-background;
-
-    &__header{
-        margin: 0px 1rem 0px 0.7rem
-    }
+    padding: 0px 1rem 3rem 0.7rem;
     &__head{
         padding:2rem 0px;
         margin: 0px;
@@ -236,9 +240,6 @@ body{
     &__logo{
         display: none;
     }
-    &__contacts{
-        margin: 0px 1rem 0px 0.7rem;
-    }
     &__compname{
         @include mob-sub-header;
     }
@@ -247,14 +248,10 @@ body{
         font-weight: 300;
         color: $text-field-border;
     }
-    &__bottom{
-        margin: 0px 1rem 0px 0.7rem;
-        padding-bottom: 3rem;
-    }
     
     @include tablet{
+        padding: 0px 1.5rem 3rem;
     &__header{
-        margin: 0px 1.5rem;
         display: flex;
         justify-content:space-between;
         align-items: center;
@@ -265,20 +262,49 @@ body{
     }
     &__links{
         width: 30%;
-        justify-content: center;
-    }
-    &__link{
-        padding: 0px 1.5rem;
+        justify-content: flex-start;
     }
     &__logo{
         display: flex;
-        width: 30%;
+        width: 15%;
     }
     &__contacts{
-        margin: 0px 1.5rem;
         display: flex;
         justify-content: space-between;
+    }
+    }
 
+    @include desktop{
+        padding: 0px 11.25rem 3rem;
+    &__contacts{
+        display: flex;
+        justify-content: flex-start;
+    }
+    &__contact{
+        margin-right: 8rem;
+    }
+    &__header{
+        display: flex;
+        justify-content: flex-start;
+    }
+    &__head{
+        padding: 3rem 0px 3.5rem 0px;
+    }
+    &__logo{
+        width: 120px;
+        height: 24px;
+    }
+    &__links{
+        width: 60%;
+    }
+    &__compname h3{
+        margin: 0px;
+    }
+    &__address h4{
+        margin: 1.5rem 0px;
+    }
+    &__copyright h4{
+        margin: 0px 0px 2.5rem;
     }
     }
 }

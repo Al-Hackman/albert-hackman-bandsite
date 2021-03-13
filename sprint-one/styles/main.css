@@ -22,7 +22,7 @@ body {
 
 .navbar {
   background-color: #323232;
-  width: 100vw;
+  width: 100%;
   height: 5rem;
 }
 .navbar__head {
@@ -52,23 +52,28 @@ body {
 }
 @media (min-width: 768px) {
   .navbar {
+    box-sizing: border-box;
     padding-left: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: flex-start;
   }
   .navbar__head {
-    width: 30%;
     text-align: left;
-  }
-  .navbar__main {
-    width: 50%;
+    margin-right: 3.5rem;
   }
   .navbar__list {
     text-align: left;
     font-size: 1rem;
     line-height: 1.5rem;
     font-weight: 500;
+    width: 5rem;
+    margin-right: 3.5rem;
+  }
+}
+@media (min-width: 1440px) {
+  .navbar {
+    padding: 0px 11.25rem;
   }
 }
 
@@ -86,6 +91,7 @@ body {
   font-size: 1.5rem;
   line-height: 2rem;
   padding-left: 1rem;
+  width: 60%;
   color: #ffffff;
 }
 @media (min-width: 768px) {
@@ -97,6 +103,15 @@ body {
     font-size: 3.75rem;
     line-height: 4.25rem;
     font-weight: 700;
+  }
+}
+@media (min-width: 1440px) {
+  .hero {
+    height: 42.87rem;
+  }
+  .hero__header {
+    padding-left: 11.25rem;
+    width: 40%;
   }
 }
 
@@ -112,7 +127,6 @@ body {
 }
 .musicians__img {
   width: 100%;
-  height: 9rem;
 }
 .musicians__quote {
   margin: 1.5rem 0px 2rem 0px;
@@ -157,6 +171,33 @@ body {
     margin-left: 0.75rem;
   }
 }
+@media (min-width: 1440px) {
+  .musicians {
+    margin: 0px 11.25rem;
+  }
+  .musicians__about {
+    margin: 3rem 0px;
+  }
+  .musicians__main {
+    margin: 0px 5.75rem;
+  }
+  .musicians__img {
+    width: 56rem;
+    height: 28.125rem;
+  }
+  .musicians__quote {
+    margin: 3rem 0px 2.5rem 0px;
+  }
+  .musicians__pq {
+    margin: 3.5rem 0px 2rem 0rem;
+  }
+  .musicians__biography-1 {
+    margin: 0px 1.25rem 3rem 0px;
+  }
+  .musicians__biography-2 {
+    margin-left: 1.25rem;
+  }
+}
 
 .gallery {
   background-color: #fafafa;
@@ -183,6 +224,18 @@ body {
     width: 14rem;
     height: 7.87rem;
     margin-bottom: 1.5rem;
+  }
+}
+@media (min-width: 1440px) {
+  .gallery {
+    margin: 0px 11.25rem;
+  }
+  .gallery__title {
+    padding: 3rem 0px 4rem 0px;
+  }
+  .gallery__photo {
+    width: 21.5rem;
+    height: 12.06rem;
   }
 }
 

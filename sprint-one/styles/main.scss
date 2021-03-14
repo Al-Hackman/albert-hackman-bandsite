@@ -1,6 +1,6 @@
-@use "./partials/typography" as *;
-@use "./partials/mixins" as *;
-@use "./partials/variables" as *;
+@use "partials/typography" as *;
+@use "partials/mixins" as *;
+@use "partials/variables" as *;
 
 
 
@@ -23,14 +23,12 @@ body{
     }
     &__logo{
         padding: 1rem 0px 0.8rem;
-        @include header;
     }
     &__items{
         margin: 0px;
         padding: 0px;
         display: flex;
         justify-content:space-evenly;
-        @include lower-header;
     
     }
     &__list{
@@ -56,7 +54,7 @@ body{
     }
     &__list{
         text-align: left;
-        @include sub-header;
+        // @include sub-header;
         width: 5rem;
         margin-right: 3.5rem;
     }
@@ -73,17 +71,30 @@ body{
     height: 11.4rem;
     background-position: center;
     background-size: cover;
-    opacity: 50%;
+    // opacity: 50%;
     display: flex;
     align-items: center;
-
+    // background-color: $primary-background 0.5;
+    &__overlay{
+        z-index: 2000;
+        opacity: 0.5;
+        position: absolute;
+        top: 5rem;
+        height: 11.4rem;
+        left: 0;
+        bottom: 0;
+        background:$primary-background;
+        right: 0;
+    }
     &__header{
+        z-index: 2000;
         margin: 0px;
         font-size: 1.5rem;
         line-height: 2rem;
         padding-left: 1rem;
         width: 60%;
         color: $secondary-background;
+        @include lower-header
     }
 
     @include tablet{
@@ -91,7 +102,11 @@ body{
     &__header{
         padding-left: 1.5rem;
         @include hero-header;
+        width: 70%;
     } 
+    &__overlay{
+        height: 25rem;
+    }
     }
     @include desktop{
         height: 42.87rem;
@@ -99,12 +114,15 @@ body{
         padding-left: 11.25rem;
         width: 40%;
     }
+    &__overlay{
+        height: 42.87rem;
+    }
     }
 }
 
 .musicians{
     margin: 0px 1rem;
-    @include mob-header;
+    @include sub-header;
 
     &__about{
         margin:2rem 0px 1.5rem 0px;
@@ -121,6 +139,9 @@ body{
         @include mob-sub-header;
         margin-bottom: 2.5rem;
     }
+    &__name{
+        @include mob-sub-header;
+    }
     &__biography{
         @include mob-paragraph;
     }
@@ -132,13 +153,25 @@ body{
     }
 
     @include tablet{
-       margin: 0px 1.5rem; 
+       margin: 0px 1.5rem 2rem; 
+    &__about{
+        @include header;
+    }
     &__img{
         height: 22.6rem;
+    }
+    &__quote{
+        @include lower-header;
+    }
+    &__quote-name{
+        @include sub-header;
     }
     &__biography{
         display: flex;
         justify-content: space-between;
+        @include paragraph;
+        line-height: 1.5rem;
+        letter-spacing: 0.05em;
     }
     &__biography-1{
         margin: 0px;
@@ -193,6 +226,9 @@ body{
 
     @include tablet{
         margin: 0px 1.5rem;
+    &__title{
+        @include header;
+    }
     &__photos{
         display: flex;
         justify-content:space-between;
@@ -225,7 +261,7 @@ body{
     &__head{
         padding:2rem 0px;
         margin: 0px;
-        @include mob-header;
+        @include lower-header;
     }
     &__links{
         padding: 0px;
@@ -243,9 +279,9 @@ body{
     &__compname{
         @include mob-sub-header;
     }
-    &__address, &__copyright{
-        @include mob-paragraph;
-        font-weight: 300;
+    &__address, &__copyright, &__bottom{
+        @include paragraph;
+        font-weight: 200;
         color: $text-field-border;
     }
     
@@ -297,13 +333,13 @@ body{
     &__links{
         width: 60%;
     }
-    &__compname h3{
+    &__compname h4{
         margin: 0px;
     }
-    &__address h4{
+    &__address p{
         margin: 1.5rem 0px;
     }
-    &__copyright h4{
+    &__copyright p{
         margin: 0px 0px 2.5rem;
     }
     }

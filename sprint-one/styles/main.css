@@ -34,18 +34,33 @@ body {
 .navbar__logo {
   padding: 1rem 0px 0.8rem;
 }
+.navbar__main {
+  height: 32px;
+}
 .navbar__items {
   margin: 0px;
   padding: 0px;
   display: flex;
   justify-content: space-evenly;
+  height: 100%;
 }
 .navbar__list {
   list-style-type: none;
   font-weight: 500;
-  color: #afafaf;
   width: 50%;
   text-align: center;
+}
+.navbar__list a {
+  text-decoration: none;
+  color: #afafaf;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  box-sizing: border-box;
+}
+.navbar__items a.active {
+  border-bottom: 5px solid #ffffff;
+  color: #ffffff;
 }
 @media (min-width: 768px) {
   .navbar {
@@ -58,6 +73,10 @@ body {
   .navbar__head {
     text-align: left;
     margin-right: 3.5rem;
+    height: 80px;
+  }
+  .navbar__main {
+    height: 80px;
   }
   .navbar__items {
     height: 80px;
@@ -67,6 +86,12 @@ body {
     text-align: left;
     width: 5rem;
     margin-right: 3.5rem;
+    height: 100%;
+  }
+  .navbar__list a {
+    height: 100%;
+    display: flex;
+    align-items: center;
   }
 }
 @media (min-width: 1440px) {
@@ -253,6 +278,10 @@ body {
 .gallery__photo {
   width: 100%;
   margin-bottom: 1rem;
+  filter: grayscale(100%);
+}
+.gallery__photo:hover {
+  filter: grayscale(0%);
 }
 @media (min-width: 768px) {
   .gallery {

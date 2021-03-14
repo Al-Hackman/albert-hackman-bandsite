@@ -24,19 +24,33 @@ body{
     &__logo{
         padding: 1rem 0px 0.8rem;
     }
+    &__main{
+        height: 32px;
+    }
     &__items{
         margin: 0px;
         padding: 0px;
         display: flex;
         justify-content:space-evenly;
-    
+        height: 100%;
     }
     &__list{
         list-style-type: none;
         font-weight: 500;
-        color: $text-label;
         width: 50%;
         text-align: center;
+    }
+    &__list a{
+        text-decoration: none;
+        color: $text-label;
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        box-sizing: border-box;
+    }
+    &__items a.active{
+        border-bottom: 5px solid $secondary-background;
+        color: $secondary-background;  
     }
     @include tablet{
         box-sizing: border-box;
@@ -47,6 +61,10 @@ body{
     &__head{
         text-align: left;
         margin-right: 3.5rem;
+        height: 80px;
+    }
+    &__main{
+        height: 80px;
     }
     &__items{
         height: 80px;
@@ -54,9 +72,14 @@ body{
     }
     &__list{
         text-align: left;
-        // @include sub-header;
         width: 5rem;
         margin-right: 3.5rem;
+        height: 100%;
+    }
+    &__list a{
+        height: 100%;
+        display: flex;
+        align-items: center;
     }
 
     }
@@ -71,10 +94,8 @@ body{
     height: 11.4rem;
     background-position: center;
     background-size: cover;
-    // opacity: 50%;
     display: flex;
     align-items: center;
-    // background-color: $primary-background 0.5;
     &__overlay{
         z-index: 2000;
         opacity: 0.5;
@@ -128,8 +149,7 @@ body{
         margin:2rem 0px 1.5rem 0px;
     }
     &__img{
-        width: 100%; 
-        // height: 9rem;       
+        width: 100%;       
     }
     &__quote{
         margin: 1.5rem 0px 2rem 0px;
@@ -222,6 +242,10 @@ body{
     &__photo{
         width: 100%;
         margin-bottom: 1rem;
+        filter: grayscale(100%);
+    }
+    &__photo:hover{
+        filter: grayscale(0%);
     }
 
     @include tablet{

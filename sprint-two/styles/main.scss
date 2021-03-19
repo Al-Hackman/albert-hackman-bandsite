@@ -17,6 +17,7 @@ body{
         display: flex;
         justify-content: center;
         align-items: center;
+        height: 48px;
     }
     &__logo{
         padding: 1rem 0px 0.8rem;
@@ -36,6 +37,7 @@ body{
         font-weight: 500;
         width: 50%;
         text-align: center;
+        height: 100%;
     }
     &__list a{
         text-decoration: none;
@@ -281,6 +283,66 @@ body{
     }
     }
 }
+
+.comments{
+    margin: 2rem 1rem;
+}
+.add-comment{
+    &__heading{
+        margin: 0px;
+    }
+    &__box{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 2.5rem;
+    }
+    &__photo{
+        width: 18%;
+        height: 3rem;
+        border-radius: 50%;
+        margin-top: 1rem;
+    }
+    &__form{
+        display: flex;
+        flex-direction: column;
+        width: 78%;
+    }
+    .label{
+        color: $text-label;
+        font-size: 0.75rem;
+        line-height: 1.25rem;
+    }
+    #full-name{
+        background-color: $text-field-background;
+        height: 2.5rem;
+        border: 1px solid $text-field-border;
+        border-radius: 4px;
+        margin-bottom: 1rem;
+    }
+    #full-name:active{
+        border: 1px solid $primary-background;
+    }
+    #input-comment{
+        background-color: $text-field-background;
+        border-radius: 4px;
+        height: 6rem;
+        margin-bottom: 1rem;
+        border: 1px solid $text-field-border;
+    }
+    #submit-comment{
+        background-color: $primary-background;
+        color: $secondary-background;
+        height: 2.5rem;
+        border-radius: 4px;
+        padding: 0px;
+        border: 0px;
+        font-size: 1rem;
+    }
+
+}
+
+
 
 .footer{
     background-color: $primary-background;

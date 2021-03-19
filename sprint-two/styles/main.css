@@ -30,6 +30,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 48px;
 }
 .navbar__logo {
   padding: 1rem 0px 0.8rem;
@@ -49,6 +50,7 @@ body {
   font-weight: 500;
   width: 50%;
   text-align: center;
+  height: 100%;
 }
 .navbar__list a {
   text-decoration: none;
@@ -325,6 +327,62 @@ body {
   .gallery__photo {
     width: 21.5rem;
   }
+}
+
+.comments {
+  margin: 2rem 1rem;
+}
+
+.add-comment__heading {
+  margin: 0px;
+}
+.add-comment__box {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 2.5rem;
+}
+.add-comment__photo {
+  width: 18%;
+  height: 3rem;
+  border-radius: 50%;
+  margin-top: 1rem;
+}
+.add-comment__form {
+  display: flex;
+  flex-direction: column;
+  width: 78%;
+}
+.add-comment .label {
+  color: #afafaf;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+}
+.add-comment #full-name {
+  background-color: #fafafa;
+  height: 2.5rem;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+.add-comment #full-name:active {
+  border: 1px solid #323232;
+}
+.add-comment #input-comment {
+  background-color: #fafafa;
+  border-radius: 4px;
+  height: 6rem;
+  margin-bottom: 1rem;
+  border: 1px solid #e1e1e1;
+}
+.add-comment #submit-comment {
+  background-color: #323232;
+  color: #ffffff;
+  height: 2.5rem;
+  border-radius: 4px;
+  padding: 0px;
+  border: 0px;
+  font-size: 1rem;
 }
 
 .footer {

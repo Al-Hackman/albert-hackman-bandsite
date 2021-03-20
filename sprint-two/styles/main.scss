@@ -285,7 +285,13 @@ body{
 }
 
 .comments{
-    margin: 2rem 1rem;
+    margin: 2rem 1rem 2.5rem;
+    @include  tablet{
+        margin: 2rem 1.5rem 2.5rem;;
+    }
+    @include desktop{
+        margin: 3rem 11.25rem 2.5rem;
+    }
 }
 .add-comment{
     &__heading{
@@ -296,6 +302,8 @@ body{
         justify-content: space-between;
         width: 100%;
         margin-top: 2.5rem;
+        padding-bottom: 2rem;
+        border-bottom: 2px solid $text-field-border;
     }
     &__photo{
         width: 18%;
@@ -319,6 +327,7 @@ body{
         border: 1px solid $text-field-border;
         border-radius: 4px;
         margin-bottom: 1rem;
+        padding-left: 1rem;
     }
     #full-name:active{
         border: 1px solid $primary-background;
@@ -329,6 +338,7 @@ body{
         height: 6rem;
         margin-bottom: 1rem;
         border: 1px solid $text-field-border;
+        padding: 1rem 0px 0px 1rem;
     }
     #submit-comment{
         background-color: $primary-background;
@@ -340,9 +350,122 @@ body{
         font-size: 1rem;
     }
 
+    @include tablet{
+        &__heading{
+            @include header;
+        } 
+        &__photo{
+            width: 3rem;
+            margin-right: 1.25rem;
+        }
+        &__box{
+            width:80%;
+            margin-right: auto;
+            margin-left: auto;
+            justify-content: center;
+        }
+        &__form{
+            width: 100%;
+        }
+        #submit-comment{
+            width: 10rem;
+            align-self: flex-end;
+        }
+        
+    }
+
+    @include desktop{
+        &__form{
+            width: 28.75rem;
+        }
+        &__box{
+            width: 58%;
+        }
+        &__photo{
+            margin-top: 1.7rem;
+        }
+        .label{
+            margin: 0px 0px 0.5rem;
+        }
+        #full-name{
+            height: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        #input-comment{
+            margin-bottom: 1.5rem;
+        }
+        #submit-comment{
+            height: 3rem;
+        }
+    }
+
 }
 
+.saved-comment{
+    &__cover{
+         display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 2px solid $text-field-border;
+    }
+    &__photo{
+        background-color: $text-field-border;
+        width: 16%;
+        height: 3rem;
+        border-radius: 50%;
+    }
+    &__comments{
+        width: 80%;
+    }
+    &__name{
+        margin: 0px;
+        @include mob-sub-header;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__date{
+        color: $text-label;
+    }
+    &__content{
+        margin: 0px;
+        @include paragraph;
+        margin-top: 1rem;
+    }
 
+    @include tablet{
+        &__cover{
+        width:80%;
+        margin-right: auto;
+        margin-left: auto;
+        justify-content: center;
+        }
+        &__photo{
+        width: 3rem;
+        margin-right: 1.25rem;
+        }
+        &__name{
+        justify-content: flex-start;
+        }
+        &__date{
+        margin-left: 1rem;
+        }
+        &__comments{
+        width: 100%;
+        }
+
+    @include desktop{
+        &__cover{
+        width: 58%;
+        }
+        &__photo{
+        margin-right: 1rem;
+        }
+    }
+
+    }
+}
 
 .footer{
     background-color: $primary-background;

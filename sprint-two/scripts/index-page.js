@@ -20,22 +20,31 @@ let commentArray = [
 
 duplicate = () => {
 
-    for(let i = 0; i < 3; i++){
+    for(let i = 0; i < commentArray.length; i++){
         let commentContainer = document.querySelector(".saved-comment");
-        let photo = document.createElement("img");
+
+        let photoComment = document.createElement("div");
+        photoComment.classList.add("saved-comment__cover");
+        commentContainer.appendChild(photoComment);
+
+        let photo = document.createElement("div");
         photo.classList.add("saved-comment__photo");
-        commentContainer.appendChild(photo);
+        photoComment.appendChild(photo);
+
         let pastComment = document.createElement("div");
         pastComment.classList.add("saved-comment__comments");
-        commentContainer.appendChild(pastComment);
+        photoComment.appendChild(pastComment);
+
         let commentName = document.createElement("h4");
         commentName.classList.add("saved-comment__name");
         commentName.innerText = commentArray[i].name;
         pastComment.appendChild(commentName);
+
         let commentDate = document.createElement("span");
         commentDate.classList.add("saved-comment__date");
         commentDate.innerText = commentArray[i].date;
         commentName.appendChild(commentDate);
+
         let mainComment = document.createElement("p");
         mainComment.classList.add("saved-comment__content");
         mainComment.innerText = commentArray[i].statement;
@@ -43,18 +52,17 @@ duplicate = () => {
     }
 }
 
+duplicate(commentArray);
 
-for(let i=0; i<1; i++){
-    duplicate(commentArray[i]);
-}
 
 
 //creating an event to add new comment
 
 let submitButton = document.querySelector('#submit-comment');
-// let textName = document.querySelector('#full-name');
-// let textComment = document.querySelector('#input-comment');
-eventHandler = event => {
+let textName = document.querySelector('#full-name');
+let textComment = document.querySelector('#input-comment');
+
+displayComment = event => {
     event.preventDefault();
 
     let item = document.createElement("h4");
@@ -65,13 +73,55 @@ eventHandler = event => {
     let textComment = document.querySelector("#input-comment").value;
     item2.innerText = textComment;
 
-    let listItems = document.querySelector('.saved-comment__comments');
-    listItems.prepend(item2);
-    listItems.prepend(item);
-    listItems.removeChild(listItems.lastElementChild);
+    let newCom = {
+        name: textName,
+        date: Date.now(),
+        statement: textComment,
+    }
+
+    commentArray.unshift(newCom);
+    console.log(commentArray);
+    commentArray.pop();
+    console.log(commentArray);
+    duplicate();
+    
     document.querySelector('#full-name').value = ' ';
     document.querySelector('#input-comment').value = ' ';
-
 }
 
-submitButton.addEventListener('click', eventHandler);
+submitButton.addEventListener('click', displayComment);
+
+
+
+
+// let commentName = document.createElement("h4");
+    // commentName.classList.add("saved-comment__name");
+    // let textName = document.querySelector('#full-name').value;
+    // commentName.innerText = textName;
+    // // pastComment.appendChild(commentName);
+
+    // let commentDate = document.createElement("span");
+    // commentDate.classList.add("saved-comment__date");
+    // commentDate.innerText = Date.now();
+    // // commentName.appendChild(commentDate);
+
+    // let mainComment = document.createElement("p");
+    // mainComment.classList.add("saved-comment__content");
+    // let textComment = document.querySelector("#input-comment").value;
+    // mainComment.innerText = textComment;
+    // // pastComment.appendChild(mainComment);
+
+    // let listItems = document.querySelectorAll('.saved-comment__comments');
+    // // listItems.prepend(item2);
+    // // listItems.prepend(item);
+
+    // for(let i=0; i<commentArray.length;i++){
+    //     duplicate(commentArray[i]);
+    //     // return commentArray;
+    //     console.log(commentArray);
+//     }
+// // }
+//     let listItems = document.querySelectorAll('.saved-comment__comments');
+//     // listItems.prepend(newComment);
+//     commentArray = listItems.pop();
+//     console.log(listItems);

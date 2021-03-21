@@ -269,7 +269,7 @@ body{
         padding: 0px 11.25rem 2.5rem;
         margin: 0px;
     &__title{
-        padding: 3rem 0px 4rem 0px;
+        padding: 3rem 0px 4rem;
     }
     &__photo{
         width: 18rem;
@@ -348,6 +348,9 @@ body{
         padding: 0px;
         border: 0px;
         font-size: 1rem;
+    }
+    #submit-comment:hover{
+        background-color: #000000;
     }
 
     @include tablet{

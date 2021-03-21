@@ -1,16 +1,16 @@
 @font-face {
   font-family: "Avenir Next";
-  src: url("../../assets/fonts/AvenirNextProLT/Linotype - AvenirNextLTPro-Regular.otf") format("truetype");
+  src: url("../../assets/fonts/AvenirNextProLT/Linotype - AvenirNextLTPro-Regular.otf") format("opentype");
   font-weight: 400;
 }
 @font-face {
   font-family: "Avenir Next";
-  src: url("../../assets/fonts/AvenirNextProLT/Linotype - AvenirNextLTPro-Demi.otf") format("truetype");
+  src: url("../../assets/fonts/AvenirNextProLT/Linotype - AvenirNextLTPro-Demi.otf") format("opentype");
   font-weight: 500;
 }
 @font-face {
   font-family: "Avenir Next";
-  src: url("../../assets/fonts/AvenirNextProLT/Linotype - AvenirNextLTPro-Bold.otf") format("truetype");
+  src: url("../../assets/fonts/AvenirNextProLT/Linotype - AvenirNextLTPro-Bold.otf") format("opentype");
   font-weight: 700;
 }
 html {
@@ -316,7 +316,7 @@ body {
     margin: 0px;
   }
   .gallery__title {
-    padding: 3rem 0px 4rem 0px;
+    padding: 3rem 0px 4rem;
   }
   .gallery__photo {
     width: 18rem;
@@ -397,6 +397,9 @@ body {
   padding: 0px;
   border: 0px;
   font-size: 1rem;
+}
+.add-comment #submit-comment:hover {
+  background-color: #000000;
 }
 @media (min-width: 768px) {
   .add-comment__heading {

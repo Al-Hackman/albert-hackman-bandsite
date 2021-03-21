@@ -1,4 +1,6 @@
 
+//Declaring an Array with the default 3 comments given in the mockup.
+
 let commentArray = [
     {
         name:"Michael Lyons",
@@ -18,11 +20,12 @@ let commentArray = [
 ];
 
 
+//Declaring a function to create various elements and add values as well based on the arguments.
+
 duplicate = () => {
 
     let commentContainer = document.querySelector(".saved-comment");
     
-
     for(let i = 0; i < commentArray.length; i++){
 
         let photoComment = document.createElement("div");
@@ -54,12 +57,13 @@ duplicate = () => {
     }
 }
 
+//Invoking(calling) the function with the array as the argument.
+
 duplicate(commentArray);
 
 
-
-
-//creating an event to add new comment
+//Creating an Event Handler to add new comment.
+// This function also clears up the old history on saved comments and builds a new array with the latest comment on top.
 
 let submitButton = document.querySelector('#submit-comment');
 let textName = document.querySelector('#full-name');
@@ -68,7 +72,7 @@ let textComment = document.querySelector('#input-comment');
 displayComment = event => {
     event.preventDefault();
 
-    document.querySelector('.saved-comment').innerHTML='';
+    document.querySelector('.saved-comment').innerHTML = '';
 
     let item = document.createElement("h4");
     let textName = document.querySelector('#full-name').value;
@@ -94,6 +98,6 @@ displayComment = event => {
     document.querySelector('#input-comment').value = ' ';
 }
 
-
+//Invoke(call) the function when the button is clicked.
 
 submitButton.addEventListener('click', displayComment);

@@ -1,3 +1,6 @@
+
+//Declaring an Array of objects with the dafault details in mockup
+
 let showsArray = [
     {
         Date:"Mon Dec 17 2018",
@@ -32,6 +35,9 @@ let showsArray = [
 ];
 
 
+//Declaring a function which will create different elements whenever this function is called.
+//Again this function takes the array created above as an argument to display the values. 
+
 displayShows = () => {
         let showsContainer = document.querySelector(".shows-container");
        
@@ -42,7 +48,6 @@ displayShows = () => {
 
         let showsCover = document.createElement("div");
         showsCover.classList.add("shows__cover");
-        // showsHeader.innerText = "Shows";
         showsContainer.appendChild(showsCover);
 
         let showsTitles = document.createElement("div");
@@ -113,4 +118,7 @@ displayShows = () => {
 
     }
 }
+
+//This is to Invoke(call) the function, with the array as it's argument.
+
 displayShows(showsArray);

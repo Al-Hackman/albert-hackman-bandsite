@@ -40,9 +40,14 @@ displayShows = () => {
         showsHeader.innerText = "Shows";
         showsContainer.appendChild(showsHeader);
 
+        let showsCover = document.createElement("div");
+        showsCover.classList.add("shows__cover");
+        // showsHeader.innerText = "Shows";
+        showsContainer.appendChild(showsCover);
+
         let showsTitles = document.createElement("div");
         showsTitles.classList.add("shows__titles");
-        showsContainer.appendChild(showsTitles);
+        showsCover.appendChild(showsTitles);
 
         let title_1 = document.createElement("h4");
         title_1.classList.add("shows__title");
@@ -57,7 +62,7 @@ displayShows = () => {
         let title_3 = document.createElement("h4")
         title_3.classList.add("shows__title");
         title_3.innerText = "LOCATION";
-        showsTitles.appendChild(title_3)
+        showsTitles.appendChild(title_3);
          
 
     for (let i = 0; i < showsArray.length; i++){
@@ -65,7 +70,7 @@ displayShows = () => {
         let showsCont = document.createElement("div");
 
         showsCont.classList.add("shows");
-        showsContainer.appendChild(showsCont);
+        showsCover.appendChild(showsCont);
         
         let showsList = document.createElement("ul");
         showsList.classList.add("shows__list");

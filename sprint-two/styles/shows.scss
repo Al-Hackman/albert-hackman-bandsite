@@ -92,7 +92,6 @@ body{
     @include desktop{
         padding: 0px 11.25rem;
     }
-
 }
 
 .hero{
@@ -101,7 +100,6 @@ body{
     background-position: center;
     background-size: cover;
     display: flex;
-    // align-items: center;
     flex-direction: column;
     &__overlay{
         z-index: 2000;
@@ -116,6 +114,8 @@ body{
     }
     &__headings{
         z-index: 2000;
+        height: 55%;
+        margin-bottom: 4rem;
     }
     &__top-header{
         z-index: 2000;;
@@ -126,10 +126,7 @@ body{
     &__header{
         z-index: 2000;
         margin: 1rem 0px 4rem;
-        // font-size: 1.5rem;
-        // line-height: 2rem;
         padding:0px 1rem;
-        // width: 60%;
         color: $secondary-background;
         @include header
     }
@@ -145,10 +142,14 @@ body{
     &__top-header{
         padding: 6rem 1.5rem 0px;
     }
+    &__headings{
+        margin-bottom: 1rem;
+    }
     &__header{
         padding-left: 1.5rem;
         @include hero-header;
         width: 75%;
+        margin-bottom: 0px;
     } 
     &__overlay{
         height: 41.88rem;
@@ -165,25 +166,26 @@ body{
         padding: 10rem 11.25rem 0px 11.25rem;
         display: flex;
         flex-direction: row;
-        align-items: flex-end;
         justify-content: space-between;
     &__headings{
         width: 28.75rem;
     }
     &__top-header{
         padding: 0px;
+        margin-bottom: 3rem;
     }
     &__header{
         padding: 0px;
         margin: 0px;
-        width: 50%;
+        width: 100%;
         @include hero-header;
-        margin-right: 4rem;
+        font-size: 3rem;
     }
     &__stream{
-        width: 27.25rem;
+        width: 25rem;
         height: 9.125rem;
         padding: 0px;
+        margin-top: 7rem;
     }
     }
 }
@@ -192,6 +194,11 @@ body{
     padding: 0px 1rem;
     @include tablet{
         padding: 0px 1.5rem;
+    }
+    @include desktop{
+        padding: 0px 11.25rem;
+        display: flex;
+        justify-content: space-between;
     }
 }
 
@@ -267,18 +274,26 @@ body{
             display: flex;
             justify-content: flex-start;
             width: 100%;
-            // margin-right: 8rem;
         }
-
     }
+    @include desktop{
 
-
-
+        margin-bottom: 1rem;
+        &__header{
+            margin: 3rem 0px 2.5rem;
+        }
+        &__cover{
+            width: 74.5%;
+            margin-bottom: 1.5rem;
+        }
+        &__title{
+            margin: 3rem 0px 2.5rem;
+        }
+        &__list{
+            margin: 0px;
+        }
+    }
 }
-
-
-
-
 
 
 .footer{

@@ -32,40 +32,80 @@ let showsArray = [
 ];
 
 
+displayShows = () => {
         let showsContainer = document.querySelector(".shows-container");
+       
+        let showsHeader = document.createElement("h2");
+        showsHeader.classList.add("shows__header");
+        showsHeader.innerText = "Shows";
+        showsContainer.appendChild(showsHeader);
+
+        let showsTitles = document.createElement("div");
+        showsTitles.classList.add("shows__titles");
+        showsContainer.appendChild(showsTitles);
+
+        let title_1 = document.createElement("h4");
+        title_1.classList.add("shows__title");
+        title_1.innerText = "DATES";
+        showsTitles.appendChild(title_1);
+
+        let title_2 = document.createElement("h4")
+        title_2.classList.add("shows__title");
+        title_2.innerText = "VENUE";
+        showsTitles.appendChild(title_2);
+
+        let title_3 = document.createElement("h4")
+        title_3.classList.add("shows__title");
+        title_3.innerText = "LOCATION";
+        showsTitles.appendChild(title_3)
+         
+
+    for (let i = 0; i < showsArray.length; i++){
 
         let showsCont = document.createElement("div");
+
         showsCont.classList.add("shows");
         showsContainer.appendChild(showsCont);
         
-        let showsHeader = document.createElement("h2");
-        showsHeader.classList.add("shows__header");
-        showsCont.appendChild(showsHeader);
-
-        let showsTitles = document.createElement("h4");
-        showsTitles.classList.add("shows__titles");
-        showsCont.appendChild(showsTitles);
-
         let showsList = document.createElement("ul");
         showsList.classList.add("shows__list");
         showsCont.appendChild(showsList);
 
         let showsItem = document.createElement("li");
         showsItem.classList.add("shows__item");
-        showsItem.innerText = "Date";
+        showsItem.innerText = "DATE";
         showsList.appendChild(showsItem);
-
+        //
         let showDate = document.createElement("span");
         showDate.classList.add("shows__item-date");
-        showDate.innerText = showsArray[].Date
+        showDate.innerText = showsArray[i].Date;
+        showsList.appendChild(showDate);
 
+        let showsItem2 = document.createElement("li");
+        showsItem2.classList.add("shows__item");
+        showsItem2.innerText = "VENUE";
+        showsList.appendChild(showsItem2);
+        //
+        let showVenue = document.createElement("span");
+        showVenue.classList.add("shows__item-venue");
+        showVenue.innerText = showsArray[i].Venue;
+        showsList.appendChild(showVenue);
 
-        // let commentDate = document.createElement("span");
-        // commentDate.classList.add("saved-comment__date");
-        // commentDate.innerText = commentArray[i].date;
-        // commentName.appendChild(commentDate);
+        let showsItem3 = document.createElement("li");
+        showsItem3.classList.add("shows__item");
+        showsItem3.innerText = "LOCATION";
+        showsList.appendChild(showsItem3);
+        //
+        let showLocation = document.createElement("span");
+        showLocation.classList.add("shows__item-location");
+        showLocation.innerText = showsArray[i].Location;
+        showsList.appendChild(showLocation);
 
-        // let mainComment = document.createElement("p");
-        // mainComment.classList.add("saved-comment__content");
-        // mainComment.innerText = commentArray[i].statement;
-        // pastComment.appendChild(mainComment);
+        let showButton = document.createElement("button");
+        showButton.classList.add("shows__button");
+        showButton.innerText = "BUY TICKETS";
+        showsCont.appendChild(showButton);
+
+    }
+}
+displayShows(showsArray);

@@ -412,8 +412,8 @@ body{
     }
     &__photo{
         background-color: $text-field-border;
-        width: 16%;
-        height: 3rem;
+        width: 2.7rem;
+        height: 2.7rem;
         border-radius: 50%;
     }
     &__comments{
@@ -427,8 +427,7 @@ body{
     }
     &__date{
         color: $text-label;
-    }
-    &__content{
+    }    &__content{
         margin: 0px;
         @include paragraph;
         margin-top: 1rem;

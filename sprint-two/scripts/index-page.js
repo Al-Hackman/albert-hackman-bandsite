@@ -8,7 +8,7 @@ let commentArray = [
     {
         name: "Gary Wong",
         date: "12/12/2018",
-        statement: "Every time I see him shred I feel so motivated to get off my couch and hop on my board. He's so talented! I wish I can ride like him one day so I can really enjoy myslef.",
+        statement: "Every time I see him shred I feel so motivated to get off my couch and hop on my board. He's so talented! I wish I can ride like him one day so I can really enjoy myself.",
     },
     {
         name: "Theodore Duncan",
@@ -20,8 +20,10 @@ let commentArray = [
 
 duplicate = () => {
 
+    let commentContainer = document.querySelector(".saved-comment");
+    
+
     for(let i = 0; i < commentArray.length; i++){
-        let commentContainer = document.querySelector(".saved-comment");
 
         let photoComment = document.createElement("div");
         photoComment.classList.add("saved-comment__cover");
@@ -56,6 +58,7 @@ duplicate(commentArray);
 
 
 
+
 //creating an event to add new comment
 
 let submitButton = document.querySelector('#submit-comment');
@@ -65,6 +68,8 @@ let textComment = document.querySelector('#input-comment');
 displayComment = event => {
     event.preventDefault();
 
+    document.querySelector('.saved-comment').innerHTML='';
+
     let item = document.createElement("h4");
     let textName = document.querySelector('#full-name').value;
     item.innerText = textName;
@@ -72,56 +77,23 @@ displayComment = event => {
     let item2 = document.createElement("p");
     let textComment = document.querySelector("#input-comment").value;
     item2.innerText = textComment;
-
+    
     let newCom = {
         name: textName,
-        date: Date.now(),
+        date: moment().format("MM/DD/YYYY hh:mm:ss a"),
         statement: textComment,
     }
 
     commentArray.unshift(newCom);
-    console.log(commentArray);
     commentArray.pop();
-    console.log(commentArray);
-    duplicate();
+   
+    duplicate(commentArray);
+
     
     document.querySelector('#full-name').value = ' ';
     document.querySelector('#input-comment').value = ' ';
 }
 
+
+
 submitButton.addEventListener('click', displayComment);
-
-
-
-
-// let commentName = document.createElement("h4");
-    // commentName.classList.add("saved-comment__name");
-    // let textName = document.querySelector('#full-name').value;
-    // commentName.innerText = textName;
-    // // pastComment.appendChild(commentName);
-
-    // let commentDate = document.createElement("span");
-    // commentDate.classList.add("saved-comment__date");
-    // commentDate.innerText = Date.now();
-    // // commentName.appendChild(commentDate);
-
-    // let mainComment = document.createElement("p");
-    // mainComment.classList.add("saved-comment__content");
-    // let textComment = document.querySelector("#input-comment").value;
-    // mainComment.innerText = textComment;
-    // // pastComment.appendChild(mainComment);
-
-    // let listItems = document.querySelectorAll('.saved-comment__comments');
-    // // listItems.prepend(item2);
-    // // listItems.prepend(item);
-
-    // for(let i=0; i<commentArray.length;i++){
-    //     duplicate(commentArray[i]);
-    //     // return commentArray;
-    //     console.log(commentArray);
-//     }
-// // }
-//     let listItems = document.querySelectorAll('.saved-comment__comments');
-//     // listItems.prepend(newComment);
-//     commentArray = listItems.pop();
-//     console.log(listItems);

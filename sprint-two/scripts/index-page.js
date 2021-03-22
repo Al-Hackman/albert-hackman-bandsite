@@ -81,10 +81,15 @@ displayComment = event => {
     let item2 = document.createElement("p");
     let textComment = document.querySelector("#input-comment").value;
     item2.innerText = textComment;
+
+    let today = new Date();
+    let month = today.getMonth() +1;
+    let year = today.getFullYear();
+    let date = today.getDate();
     
     let newCom = {
         name: textName,
-        date: moment().format("MM/DD/YYYY hh:mm:ss a"),
+        date: `${month}/${date}/${year}`,
         statement: textComment,
     }
 

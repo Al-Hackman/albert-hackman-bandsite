@@ -1,0 +1,396 @@
+@use "partials/typography" as *;
+@use "partials/mixins" as *;
+@use "partials/variables" as *;
+
+
+
+html{
+    font-family: 'Avenir Next';
+}
+body{
+    margin: 0px;
+}
+
+.navbar{
+    background-color: $primary-background;
+    width: 100%;
+    height:5rem;
+    &__head{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 48px;
+    }
+    &__logo{
+        padding: 1rem 0px 0.8rem;
+    }
+    &__main{
+        height: 32px;
+    }
+    &__items{
+        margin: 0px;
+        padding: 0px;
+        display: flex;
+        justify-content:space-evenly;
+        height: 100%;
+    }
+    &__list{
+        list-style-type: none;
+        font-weight: 500;
+        width: 50%;
+        text-align: center;
+        height: 100%;
+    }
+    &__list a{
+        text-decoration: none;
+        color: $text-label;
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        box-sizing: border-box;
+    }
+    &__items a.active{
+        border-bottom: 5px solid $secondary-background;
+        color: $secondary-background;  
+    }
+    &__list a:hover{
+        background: $text-field-border;
+        color: #4A4860;
+        box-shadow: 0px 4px 0px 0px;
+    }
+
+     @include tablet{
+        box-sizing: border-box;
+        padding-left: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    &__head{
+        text-align: left;
+        margin-right: 3.5rem;
+        height: 80px;
+    }
+    &__main{
+        height: 80px;
+    }
+    &__items{
+        height: 80px;
+        align-items: center;
+    }
+    &__list{
+        text-align: left;
+        width: 5rem;
+        margin-right: 3.5rem;
+        height: 100%;
+    }
+    &__list a{
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+    }
+    @include desktop{
+        padding: 0px 11.25rem;
+    }
+}
+
+.hero{
+    background: url(../assets/images/hero-shows2.jpg);
+    height: 29.5rem;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    &__overlay{
+        z-index: 2000;
+        opacity: 0.5;
+        position: absolute;
+        top: 5rem;
+        height: 29.5rem;
+        left: 0;
+        bottom: 0;
+        background:$primary-background;
+        right: 0;
+    }
+    &__headings{
+        z-index: 2000;
+        height: 55%;
+        margin-bottom: 4rem;
+    }
+    &__top-header{
+        z-index: 2000;;
+        color: $text-field-border;
+        padding: 4rem 1rem 0px 1rem;
+        margin: 0px;
+    }
+    &__header{
+        z-index: 2000;
+        margin: 1rem 0px 4rem;
+        padding:0px 1rem;
+        color: $secondary-background;
+        @include header
+    }
+    &__stream{
+        z-index: 2000;
+        width: 90%;
+        height: 6rem;
+        padding: 0px 1rem;
+    }
+
+    @include tablet{
+        height: 41.88rem;
+    &__top-header{
+        padding: 6rem 1.5rem 0px;
+    }
+    &__headings{
+        margin-bottom: 1rem;
+    }
+    &__header{
+        padding-left: 1.5rem;
+        @include hero-header;
+        width: 75%;
+        margin-bottom: 0px;
+    } 
+    &__overlay{
+        height: 41.88rem;
+    }
+    &__stream{
+        width: 60%;
+        height: 10rem;
+        padding: 0px 1.5rem;
+    }
+    }
+    @include desktop{
+        box-sizing: border-box;
+        height: 41.88rem;
+        padding: 10rem 11.25rem 0px 11.25rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    &__headings{
+        width: 28.75rem;
+    }
+    &__top-header{
+        padding: 0px;
+        margin-bottom: 3rem;
+    }
+    &__header{
+        padding: 0px;
+        margin: 0px;
+        width: 100%;
+        @include hero-header;
+        font-size: 3rem;
+    }
+    &__stream{
+        width: 25rem;
+        height: 9.125rem;
+        padding: 0px;
+        margin-top: 7rem;
+    }
+    }
+}
+
+.shows-container{
+    padding: 0px 1rem;
+    @include tablet{
+        padding: 0px 1.5rem;
+    }
+    @include desktop{
+        padding: 0px 11.25rem;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.shows{
+    padding-bottom: 1rem;
+    border-bottom: 2px solid $text-field-border;
+    margin-bottom: 2.5rem;
+    &__header{
+        margin:2rem 0px 2.5rem; 
+    }
+    &__titles{
+        display: none;
+    }
+    &__list{
+        padding: 0px;
+        margin-bottom: 2rem;
+        
+    }
+    &__item{
+        list-style-type: none;
+        @include sub-header;
+        color: $text-label;
+        margin: 1.5rem 0px 1rem;
+    }
+    &__item-date{
+        margin: 1rem 0px 1.5rem;
+        font-weight: 500;
+    }
+    &__button{
+        width: 100%;
+        height: 3rem;
+        background-color: $primary-background;
+        border-radius: 4px;
+        padding: 0px;
+        border: 0px;
+        color: $secondary-background;
+        @include sub-header;
+    }
+
+    @include tablet{
+        display: flex;
+        justify-content: space-between;
+        &__header{
+            @include header;
+        }
+        &__titles{
+            display: flex;
+            justify-content: space-between;
+            width: 75%;
+            color: $text-label;
+            @include sub-header;
+        }
+        &__list{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 75%;
+        }
+        &__item{
+            display: none;
+        }
+        &__item-date, &__item-venue, &__item-location{
+            margin: 0px;
+            display: flex;
+            justify-content: flex-start;
+            width: 100%;
+        }
+        &__button{
+            width: 10rem;
+            height: 3rem;
+        }
+        &__title{
+            display: flex;
+            justify-content: flex-start;
+            width: 100%;
+        }
+    }
+    @include desktop{
+
+        margin-bottom: 1rem;
+        &__header{
+            margin: 3rem 0px 2.5rem;
+        }
+        &__cover{
+            width: 74.5%;
+            margin-bottom: 1.5rem;
+        }
+        &__title{
+            margin: 3rem 0px 2.5rem;
+        }
+        &__list{
+            margin: 0px;
+        }
+    }
+}
+
+
+.footer{
+    background-color: $primary-background;
+    color: $secondary-background;
+    padding: 0px 1rem 3rem 0.7rem;
+    &__head{
+        padding:2rem 0px;
+        margin: 0px;
+        @include lower-header;
+    }
+    &__links{
+        padding: 0px;
+        margin:0px;
+        list-style: none;
+        display: flex;
+        justify-content:flex-start
+    }
+    &__link{
+        padding-right: 2rem;
+    }
+    &__logo{
+        display: none;
+    }
+    &__compname{
+        @include mob-sub-header;
+    }
+    &__address-box{
+        font-style: normal;
+    }
+    &__address, &__copyright, &__bottom{
+        @include paragraph;
+        font-weight: 200;
+        color: $text-field-border;
+        width: 80%;
+    }
+    &__copyright a{
+        text-decoration: none;
+        color: $text-field-border;
+    }
+
+    @include tablet{
+        padding: 0px 1.5rem 3rem;
+    &__header{
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+    }
+    &__head{
+        width: 30%;
+        @include header;
+    }
+    &__links{
+        width: 30%;
+        justify-content: flex-start;
+    }
+    &__logo{
+        display: flex;
+        width: 15%;
+    }
+    &__contacts{
+        display: flex;
+        justify-content: space-between;
+    }
+    }
+
+    @include desktop{
+        padding: 0px 11.25rem 3rem;
+    &__contacts{
+        display: flex;
+        justify-content: flex-start;
+    }
+    &__contact{
+        margin-right: 8rem;
+    }
+    &__header{
+        display: flex;
+        justify-content: flex-start;
+    }
+    &__head{
+        padding: 3rem 0px 3.5rem 0px;
+    }
+    &__logo{
+        width: 120px;
+        height: 24px;
+    }
+    &__links{
+        width: 60%;
+    }
+    &__compname h4{
+        margin: 0px;
+    }
+    &__address p{
+        margin: 1.5rem 0px;
+    }
+    &__copyright p{
+        margin: 0px 0px 2.5rem;
+    }
+    }
+}

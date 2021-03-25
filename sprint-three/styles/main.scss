@@ -1,0 +1,568 @@
+@use "partials/typography" as *;
+@use "partials/mixins" as *;
+@use "partials/variables" as *;
+
+html{
+    font-family: 'Avenir Next';
+}
+body{
+    margin: 0px;
+}
+
+.navbar{
+    background-color: $primary-background;
+    width: 100%;
+    height:5rem;
+    &__head{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 48px;
+    }
+    &__logo{
+        padding: 1rem 0px 0.8rem;
+    }
+    &__main{
+        height: 32px;
+    }
+    &__items{
+        margin: 0px;
+        padding: 0px;
+        display: flex;
+        justify-content:space-evenly;
+        height: 100%;
+    }
+    &__list{
+        list-style-type: none;
+        font-weight: 500;
+        width: 50%;
+        text-align: center;
+        height: 100%;
+    }
+    &__list a{
+        text-decoration: none;
+        color: $text-label;
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        box-sizing: border-box;
+    }
+    &__items a.active{
+        border-bottom: 5px solid $secondary-background;
+        color: $secondary-background;  
+    }
+    &__list a:hover{
+        background: $text-field-border;
+        color: #4A4860;
+        box-shadow: 0px 4px 0px 0px;
+    }
+    @include tablet{
+        box-sizing: border-box;
+        padding-left: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    &__head{
+        text-align: left;
+        margin-right: 3.5rem;
+        height: 80px;
+    }
+    &__main{
+        height: 80px;
+    }
+    &__items{
+        height: 80px;
+        align-items: center;
+    }
+    &__list{
+        text-align: left;
+        width: 5rem;
+        margin-right: 3.5rem;
+        height: 100%;
+    }
+    &__list a{
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+    }
+    @include desktop{
+        padding: 0px 11.25rem;
+    }
+
+}
+
+.hero{
+    background: url(../assets/images/hero.jpg);
+    height: 11.4rem;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    &__overlay{
+        z-index: 2000;
+        opacity: 0.5;
+        position: absolute;
+        top: 5rem;
+        height: 11.4rem;
+        left: 0;
+        bottom: 0;
+        background:$primary-background;
+        right: 0;
+    }
+    &__header{
+        z-index: 2000;
+        margin: 0px;
+        font-size: 1.5rem;
+        line-height: 2rem;
+        padding-left: 1rem;
+        width: 60%;
+        color: $secondary-background;
+        @include lower-header
+    }
+
+    @include tablet{
+        height: 25rem;
+    &__header{
+        padding-left: 1.5rem;
+        @include hero-header;
+        width: 70%;
+    } 
+    &__overlay{
+        height: 25rem;
+    }
+    }
+    @include desktop{
+        height: 42.87rem;
+    &__header{
+        padding-left: 11.25rem;
+        width: 40%;
+    }
+    &__overlay{
+        height: 42.87rem;
+    }
+    }
+}
+
+.musicians{
+    margin: 0px 1rem;
+    @include sub-header;
+    &__about{
+        margin:2rem 0px 1.5rem 0px;
+    }
+    &__img{
+        width: 100%;       
+    }
+    &__quote{
+        margin: 1.5rem 0px 2rem 0px;
+        @include mob-sub-header;
+    }
+    &__quote-name{
+        @include mob-sub-header;
+        margin-bottom: 2.5rem;
+    }
+    &__name{
+        @include mob-sub-header;
+    }
+    &__biography{
+        @include mob-paragraph;
+    }
+    &_biography-1{
+        margin:0px 0px 1.5rem 0px;
+    }
+    &__biography-2{
+        margin: 0px 0px 2.5rem 0px;
+    }
+
+    @include tablet{
+       margin: 0px 1.5rem 2rem; 
+    &__about{
+        @include header;
+    }
+    &__img{
+        height: 22.6rem;
+    }
+    &__quote{
+        @include lower-header;
+    }
+    &__quote-name{
+        @include sub-header;
+    }
+    &__biography{
+        display: flex;
+        justify-content: space-between;
+        @include paragraph;
+        line-height: 1.5rem;
+        letter-spacing: 0.05em;
+    }
+    &__biography-1{
+        margin: 0px;
+        margin-right: 0.75rem;
+    }
+    &__biography-2{
+        margin: 0px;
+        margin-left: 0.75rem;
+    }
+    }
+
+    @include desktop{
+        margin: 0px 11.25rem;
+    &__about{
+        margin: 3rem 0px ;
+    }
+    &__main{
+        margin: 0px 5.75rem;
+    }
+    &__img{
+        width: 100%;
+        height: 28.125rem; 
+    }
+    &__quote{
+        margin: 3rem 0px 2.5rem 0px;
+    }
+    &__pq{
+        margin: 3.5rem 0px 2rem 0rem;
+    }
+    &__biography-1{
+        margin: 0px 1.25rem 3rem 0px;
+    }
+    &__biography-2{
+        margin-left: 1.25rem;
+    }
+    }
+}
+
+.gallery{
+    background-color: $text-field-background;
+    margin: 0px 1rem;
+    &__title{
+        padding: 2rem 0px 1.5rem 0px;
+        margin: 0px;
+    }
+    &__photo{
+        width: 100%;
+        margin-bottom: 1rem;
+        filter: grayscale(100%);
+    }
+    &__photo:hover{
+        filter: grayscale(0%);
+    }
+
+    @include tablet{
+        margin: 0px 1.5rem;
+    &__title{
+        @include header;
+    }
+    &__photos{
+        display: flex;
+        justify-content:space-between;
+        flex-wrap: wrap;
+    }
+    &__photo{
+        width: 14rem;
+        height: 7.87rem;
+        margin-bottom: 1.5rem;
+    }
+    }
+
+    @include desktop{
+        padding: 0px 11.25rem 2.5rem;
+        margin: 0px;
+    &__title{
+        padding: 3rem 0px 4rem;
+    }
+    &__photo{
+        width: 18rem;
+        height: 12.06rem;
+    }
+    }
+
+    @include desktop-1440{
+    &__photo{
+        width: 21.5rem;
+    }
+    }
+}
+
+.comments{
+    margin: 2rem 1rem 2.5rem;
+    @include  tablet{
+        margin: 2rem 1.5rem 2.5rem;;
+    }
+    @include desktop{
+        margin: 3rem 11.25rem 2.5rem;
+    }
+}
+.add-comment{
+    &__heading{
+        margin: 0px;
+    }
+    &__box{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 2.5rem;
+        padding-bottom: 2rem;
+        border-bottom: 2px solid $text-field-border;
+    }
+    &__photo{
+        width: 18%;
+        height: 3rem;
+        border-radius: 50%;
+        margin-top: 1rem;
+    }
+    &__form{
+        display: flex;
+        flex-direction: column;
+        width: 78%;
+    }
+    .label{
+        color: $text-label;
+        font-size: 0.75rem;
+        line-height: 1.25rem;
+    }
+    #full-name{
+        background-color: $text-field-background;
+        height: 2.5rem;
+        border: 1px solid $text-field-border;
+        border-radius: 4px;
+        margin-bottom: 1rem;
+        padding-left: 1rem;
+    }
+    #full-name:active{
+        border: 1px solid $primary-background;
+    }
+    #input-comment{
+        background-color: $text-field-background;
+        border-radius: 4px;
+        height: 6rem;
+        margin-bottom: 1rem;
+        border: 1px solid $text-field-border;
+        padding: 1rem 0px 0px 1rem;
+    }
+    #submit-comment{
+        background-color: $primary-background;
+        color: $secondary-background;
+        height: 2.5rem;
+        border-radius: 4px;
+        padding: 0px;
+        border: 0px;
+        font-size: 1rem;
+    }
+    #submit-comment:hover{
+        background-color: #000000;
+    }
+
+    @include tablet{
+        &__heading{
+            @include header;
+        } 
+        &__photo{
+            width: 3rem;
+            margin-right: 1.25rem;
+        }
+        &__box{
+            width:80%;
+            margin-right: auto;
+            margin-left: auto;
+            justify-content: center;
+        }
+        &__form{
+            width: 100%;
+        }
+        #submit-comment{
+            width: 10rem;
+            align-self: flex-end;
+        }
+        
+    }
+
+    @include desktop{
+        &__form{
+            width: 28.75rem;
+        }
+        &__box{
+            width: 58%;
+        }
+        &__photo{
+            margin-top: 1.7rem;
+        }
+        .label{
+            margin: 0px 0px 0.5rem;
+        }
+        #full-name{
+            height: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        #input-comment{
+            margin-bottom: 1.5rem;
+        }
+        #submit-comment{
+            height: 3rem;
+        }
+    }
+
+}
+
+.saved-comment{
+    &__cover{
+         display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 2px solid $text-field-border;
+    }
+    &__photo{
+        background-color: $text-field-border;
+        width: 2.7rem;
+        height: 2.7rem;
+        border-radius: 50%;
+    }
+    &__comments{
+        width: 80%;
+    }
+    &__name{
+        margin: 0px;
+        @include mob-sub-header;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__date{
+        color: $text-label;
+    }    &__content{
+        margin: 0px;
+        @include paragraph;
+        margin-top: 1rem;
+    }
+
+    @include tablet{
+        &__cover{
+        width:80%;
+        margin-right: auto;
+        margin-left: auto;
+        justify-content: center;
+        }
+        &__photo{
+        width: 3rem;
+        margin-right: 1.25rem;
+        }
+        &__name{
+        justify-content: flex-start;
+        }
+        &__date{
+        margin-left: 1rem;
+        }
+        &__comments{
+        width: 100%;
+        }
+
+    @include desktop{
+        &__cover{
+        width: 58%;
+        }
+        &__photo{
+        margin-right: 1rem;
+        }
+    }
+
+    }
+}
+
+.footer{
+    background-color: $primary-background;
+    color: $secondary-background;
+    padding: 0px 1rem 3rem 0.7rem;
+    &__head{
+        padding:2rem 0px;
+        margin: 0px;
+        @include lower-header;
+    }
+    &__links{
+        padding: 0px;
+        margin:0px;
+        list-style: none;
+        display: flex;
+        justify-content:flex-start
+    }
+    &__link{
+        padding-right: 2rem;
+    }
+    &__logo{
+        display: none;
+    }
+    &__compname{
+        @include mob-sub-header;
+    }
+    &__address-box{
+        font-style: normal;
+    }
+    &__address, &__copyright, &__bottom{
+        @include paragraph;
+        font-weight: 200;
+        color: $text-field-border;
+    }
+    &__copyright a{
+        text-decoration: none;
+        color: $text-field-border;
+    }
+    
+    @include tablet{
+        padding: 0px 1.5rem 3rem;
+    &__header{
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+    }
+    &__head{
+        width: 30%;
+        @include header;
+    }
+    &__links{
+        width: 30%;
+        justify-content: flex-start;
+    }
+    &__logo{
+        display: flex;
+        width: 15%;
+    }
+    &__contacts{
+        display: flex;
+        justify-content: space-between;
+    }
+    }
+
+    @include desktop{
+        padding: 0px 11.25rem 3rem;
+    &__contacts{
+        display: flex;
+        justify-content: flex-start;
+    }
+    &__contact{
+        margin-right: 8rem;
+    }
+    &__header{
+        display: flex;
+        justify-content: flex-start;
+    }
+    &__head{
+        padding: 3rem 0px 3.5rem 0px;
+    }
+    &__logo{
+        width: 120px;
+        height: 24px;
+    }
+    &__links{
+        width: 60%;
+    }
+    &__compname h4{
+        margin: 0px;
+    }
+    &__address p{
+        margin: 1.5rem 0px;
+    }
+    &__copyright p{
+        margin: 0px 0px 2.5rem;
+    }
+    }
+}

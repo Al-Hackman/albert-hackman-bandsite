@@ -485,6 +485,14 @@ body {
   font-weight: 400;
   margin-top: 1rem;
 }
+.saved-comment__like-del {
+  display: flex;
+  justify-content: space-around;
+}
+.saved-comment__ld {
+  width: 25px;
+  height: 25px;
+}
 @media (min-width: 768px) {
   .saved-comment__cover {
     width: 80%;

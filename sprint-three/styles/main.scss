@@ -426,7 +426,7 @@ body{
         margin: 0px;
         @include mob-sub-header;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-between
     }
     &__date{
         color: $text-label;
@@ -434,6 +434,16 @@ body{
         margin: 0px;
         @include paragraph;
         margin-top: 1rem;
+    }
+
+    &__like-del{
+        display: flex;
+        justify-content: space-around;
+
+    }
+    &__ld{
+        width: 25px;
+        height: 25px;
     }
 
     @include tablet{

@@ -89,16 +89,16 @@ duplicate = (arr) => {
         likeDelete.appendChild(likeCount).innerHTML=element.likes;
 
         let likeComment = document.createElement("img");
-        likeComment.classList.add("saved-comment__ld");
+        likeComment.classList.add("saved-comment__like");
         likeComment.setAttribute("src","./assets/icons/PNG/like.png");
         likeComment.setAttribute('alt', "Like this comment");
         likeComment.setAttribute('data-comment_id', element.id);
         likeComment.setAttribute('data-like_count', element.likes);
         likeComment.addEventListener('click', likeThisComment)
-        likeDelete.appendChild(likeComment);
+        likeCount.appendChild(likeComment);
 
         let delComment = document.createElement("img");
-        delComment.classList.add("saved-comment__ld");
+        delComment.classList.add("saved-comment__delete");
         delComment.setAttribute("src","./assets/icons/PNG/delete.png");
         delComment.setAttribute('alt', "Delete Comment");
         likeDelete.appendChild(delComment);
@@ -161,11 +161,11 @@ displayComment = event => {
     document.querySelector('#input-comment').value = '';
 }
 
-// function likeThisComment() {
-//     console.log('this comment', this.dataset.comment_id)
-//     console.log('this comment count', this.dataset.like_count++)
-//     // call api to update the likes
-// }
+function likeThisComment() {
+    console.log('this comment', this.dataset.comment_id)
+    console.log('this comment count', this.dataset.like_count++)
+    // call api to update the likes
+}
 
 //Invoke(call) the function when the button is clicked.
 

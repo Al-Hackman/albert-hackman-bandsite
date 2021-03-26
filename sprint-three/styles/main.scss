@@ -1,6 +1,6 @@
-@use "partials/typography" as *;
-@use "partials/mixins" as *;
-@use "partials/variables" as *;
+@use "./partials/typography" as *;
+@use "./partials/mixins" as *;
+@use "./partials/variables" as *;
 
 html{
     font-family: 'Avenir Next';
@@ -439,11 +439,17 @@ body{
     &__like-del{
         display: flex;
         justify-content: space-around;
-
     }
-    &__ld{
-        width: 25px;
-        height: 25px;
+    &__like{
+        width: 20px;
+        height: 20px;
+    }
+    &__delete{
+        width: 20px;
+        height: 20px;  
+    }
+    &__count{
+        width: 100%;
     }
 
     @include tablet{

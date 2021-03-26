@@ -85,7 +85,7 @@ displayShows = (arr) => {
         showsTitles.appendChild(title_3);
          
 
-    for (let i = 0; i < arr.length; i++){
+    arr.forEach(element => {
 
         let showsCont = document.createElement("div");
 
@@ -103,7 +103,7 @@ displayShows = (arr) => {
         //
         let showDate = document.createElement("span");
         showDate.classList.add("shows__item-date");
-        showDate.innerText =arr[i].date;
+        showDate.innerText =element.date;
         showsList.appendChild(showDate);
 
         let showsItem2 = document.createElement("li");
@@ -113,7 +113,7 @@ displayShows = (arr) => {
         //
         let showVenue = document.createElement("span");
         showVenue.classList.add("shows__item-venue");
-        showVenue.innerText = arr[i].place;
+        showVenue.innerText = element.place;
         showsList.appendChild(showVenue);
 
         let showsItem3 = document.createElement("li");
@@ -123,7 +123,7 @@ displayShows = (arr) => {
         //
         let showLocation = document.createElement("span");
         showLocation.classList.add("shows__item-location");
-        showLocation.innerText = arr[i].location;
+        showLocation.innerText = element.location;
         showsList.appendChild(showLocation);
 
         let showButton = document.createElement("button");
@@ -131,7 +131,7 @@ displayShows = (arr) => {
         showButton.innerText = "BUY TICKETS";
         showsCont.appendChild(showButton);
 
-    }
+    })
 }
 
 //This is to Invoke(call) the function, with the array as it's argument.

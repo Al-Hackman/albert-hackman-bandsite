@@ -439,17 +439,19 @@ body{
     &__like-del{
         display: flex;
         justify-content: space-around;
+        margin-top: 1rem;
     }
-    &__like{
+    &__ld{
         width: 20px;
         height: 20px;
     }
-    &__delete{
-        width: 20px;
-        height: 20px;  
+    &__like-container{
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
     }
     &__count{
-        width: 100%;
+        padding: 3px 3px;
     }
 
     @include tablet{
@@ -517,6 +519,7 @@ body{
         @include paragraph;
         font-weight: 200;
         color: $text-field-border;
+        width: 80%;
     }
     &__copyright a{
         text-decoration: none;

@@ -488,17 +488,19 @@ body {
 .saved-comment__like-del {
   display: flex;
   justify-content: space-around;
+  margin-top: 1rem;
 }
-.saved-comment__like {
+.saved-comment__ld {
   width: 20px;
   height: 20px;
 }
-.saved-comment__delete {
-  width: 20px;
-  height: 20px;
+.saved-comment__like-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
 }
 .saved-comment__count {
-  width: 100%;
+  padding: 3px 3px;
 }
 @media (min-width: 768px) {
   .saved-comment__cover {
@@ -569,6 +571,7 @@ body {
   font-weight: 400;
   font-weight: 200;
   color: #e1e1e1;
+  width: 80%;
 }
 .footer__copyright a {
   text-decoration: none;

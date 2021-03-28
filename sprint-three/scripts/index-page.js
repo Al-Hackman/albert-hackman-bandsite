@@ -41,7 +41,7 @@ getAllComments();
 
 //Declaring a function to create various elements and add values as well based on the arguments.
 
-duplicate = (arr) => {
+let duplicate = (arr) => {
 
     let commentContainer = document.querySelector(".saved-comment");
     
@@ -84,21 +84,25 @@ duplicate = (arr) => {
         likeDelete.classList.add("saved-comment__like-del");
         pastComment.appendChild(likeDelete);
 
+        let likeContainer = document.createElement("span");
+        likeContainer.classList.add("saved-comment__like-container");
+        likeDelete.appendChild(likeContainer);
+
         let likeCount = document.createElement("span");
         likeCount.classList.add("saved-comment__count");
-        likeDelete.appendChild(likeCount).innerHTML=element.likes;
+        likeContainer.appendChild(likeCount).innerText=element.likes;
 
         let likeComment = document.createElement("img");
-        likeComment.classList.add("saved-comment__like");
+        likeComment.classList.add("saved-comment__ld");
         likeComment.setAttribute("src","./assets/icons/PNG/like.png");
         likeComment.setAttribute('alt', "Like this comment");
         likeComment.setAttribute('data-comment_id', element.id);
         likeComment.setAttribute('data-like_count', element.likes);
         likeComment.addEventListener('click', likeThisComment)
-        likeCount.appendChild(likeComment);
+        likeContainer.appendChild(likeComment);
 
         let delComment = document.createElement("img");
-        delComment.classList.add("saved-comment__delete");
+        delComment.classList.add("saved-comment__ld");
         delComment.setAttribute("src","./assets/icons/PNG/delete.png");
         delComment.setAttribute('alt', "Delete Comment");
         likeDelete.appendChild(delComment);
@@ -118,7 +122,7 @@ let submitButton = document.querySelector('#submit-comment');
 let textName = document.querySelector('#full-name');
 let textComment = document.querySelector('#input-comment');
 
-displayComment = event => {
+let displayComment = event => {
     event.preventDefault();
 
     document.querySelector('.saved-comment').innerHTML = '';
@@ -131,10 +135,10 @@ displayComment = event => {
     let textComment = document.querySelector("#input-comment").value;
     item2.innerText = textComment;
 
-    let today = new Date();
-    let month = today.getMonth() +1;
-    let year = today.getFullYear();
-    let date = today.getDate();
+    // let today = new Date();
+    // let month = today.getMonth() +1;
+    // let year = today.getFullYear();
+    // let date = today.getDate();
     
     let newCom = {
 	"name": textName,

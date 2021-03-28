@@ -25,7 +25,9 @@ let bandsiteAPI = 'https://project-1-api.herokuapp.com/';
 let commentEndpoint = 'comments';
 let postEndpoint = 'post/';
 let keyApi = `?api_key=bab75cb4-c532-4fcd-add1-0c2b0361be14`;
-getAllComments = () =>{
+
+const getAllComments = () =>{
+    document.querySelector('.saved-comment').innerHTML = '';
     axios.get(`${bandsiteAPI}${commentEndpoint}${keyApi}`)
     .then(response => {
         console.log(response.data);
@@ -35,6 +37,7 @@ getAllComments = () =>{
     .catch(error => {
         console.log('Uh oh! There was an error:', error)
     })
+    
 }
 
 getAllComments();
@@ -90,7 +93,7 @@ let duplicate = (arr) => {
 
         let likeCount = document.createElement("span");
         likeCount.classList.add("saved-comment__count");
-        likeContainer.appendChild(likeCount).innerText=element.likes;
+        likeContainer.appendChild(likeCount).innerText=element.likes + (element.likes > 1 ? ' likes' : ' like');
 
         let likeComment = document.createElement("img");
         likeComment.classList.add("saved-comment__ld");
@@ -105,6 +108,8 @@ let duplicate = (arr) => {
         delComment.classList.add("saved-comment__ld");
         delComment.setAttribute("src","./assets/icons/PNG/delete.png");
         delComment.setAttribute('alt', "Delete Comment");
+        delComment.setAttribute('data-comment_id', element.id);
+        delComment.addEventListener('click', deleteThisComment)
         likeDelete.appendChild(delComment);
     
 });
@@ -125,7 +130,7 @@ let textComment = document.querySelector('#input-comment');
 let displayComment = event => {
     event.preventDefault();
 
-    document.querySelector('.saved-comment').innerHTML = '';
+    // document.querySelector('.saved-comment').innerHTML = '';
 
     let item = document.createElement("h4");
     let textName = document.querySelector('#full-name').value;
@@ -148,6 +153,7 @@ let displayComment = event => {
  
     axios.post(`${bandsiteAPI}${commentEndpoint}${keyApi}`, newCom, {headers: {'Content-Type': 'application/json'}} )
     .then(response => {
+        submitButton.disabled = true;
         console.log(response);
         getAllComments();
     })
@@ -155,24 +161,46 @@ let displayComment = event => {
         console.log(err)
     })
 
-    // commentArray.unshift(newCom);
-    // commentArray.pop();
-   
-    // duplicate(commentArray);
-
-    
+     
     document.querySelector('#full-name').value = '';
     document.querySelector('#input-comment').value = '';
 }
 
-function likeThisComment() {
+
+//Like Comment Function
+function likeThisComment(e) {
+    e.preventDefault();
     console.log('this comment', this.dataset.comment_id)
-    console.log('this comment count', this.dataset.like_count++)
-    // call api to update the likes
+    let comID = this.dataset.comment_id;
+    axios.put(`${bandsiteAPI}${commentEndpoint}/${comID}/like${keyApi}`)
+    .then(res => {
+        console.log('new like', res.data)
+        getAllComments();
+    })
+    .catch(err => {
+        console.log('like error', err)
+    })
 }
+
+//Delete Comment Function
+function deleteThisComment(e) {
+    e.preventDefault();
+    console.log('this comment', this.dataset.comment_id)
+    let comID = this.dataset.comment_id;
+    axios.delete(`${bandsiteAPI}${commentEndpoint}/${comID}${keyApi}`)
+    .then(res => {
+        getAllComments();
+    })
+    .catch(err => {
+        console.log('Delete error', err)
+    })
+}
+
+
 
 //Invoke(call) the function when the button is clicked.
 
 submitButton.addEventListener('click', displayComment);
+
 
 // delComment.addEventListener('click', deleteComment(id))

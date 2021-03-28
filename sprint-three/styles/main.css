@@ -493,6 +493,7 @@ body {
 .saved-comment__ld {
   width: 20px;
   height: 20px;
+  margin-left: 0.3rem;
 }
 .saved-comment__like-container {
   width: 100%;
@@ -500,7 +501,10 @@ body {
   justify-content: flex-start;
 }
 .saved-comment__count {
-  padding: 3px 3px;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 400;
+  color: #afafaf;
 }
 @media (min-width: 768px) {
   .saved-comment__cover {

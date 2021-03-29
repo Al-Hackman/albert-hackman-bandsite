@@ -1,39 +1,5 @@
 
-//Declaring an Array of objects with the dafault details in mockup
-
-// let showsArray = [
-//     {
-//         Date:"Mon Dec 17 2018",
-//         Venue: "Ronald Lane",
-//         Location:"San Francisco, CA",
-//     },
-//     {
-//         Date:"Tue 18 2019",
-//         Venue: "Pier 3 East",
-//         Location:"San Francisco, CA",
-//     },
-//     {
-//         Date:"Fri Jul 22 2019",
-//         Venue: "View Loungue",
-//         Location:"San Francisco, CA",
-//     },
-//     {
-//         Date:"Sat Aug 12 2019",
-//         Venue: "Hyatt Agency",
-//         Location:"San Francisco, CA",
-//     },
-//     {
-//         Date:"Fri Sep 05 2019",
-//         Venue: "Moscow Center",
-//         Location:"San Francisco, CA",
-//     },
-//     {
-//         Date:"Wed Aug 11 2019",
-//         Venue: "Pres Club",
-//         Location:"San Francisco, CA",
-//     }
-// ];
-
+//Sends a "get" request to get a list of comments from the API.
 
 let bandsiteAPI = 'https://project-1-api.herokuapp.com/';
 let showsEndpoint = 'showdates';
@@ -51,7 +17,6 @@ axios.get(`${bandsiteAPI}${showsEndpoint}${keyApi}`)
     })
 
 //Declaring a function which will create different elements whenever this function is called.
-//Again this function takes the array created above as an argument to display the values. 
 
 displayShows = (arr) => {
         let showsContainer = document.querySelector(".shows-container");
@@ -133,7 +98,3 @@ displayShows = (arr) => {
 
     })
 }
-
-//This is to Invoke(call) the function, with the array as it's argument.
-
-// displayShows(showsArray);

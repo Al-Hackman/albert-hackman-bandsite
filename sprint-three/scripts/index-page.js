@@ -1,25 +1,5 @@
 
-//Declaring an Array with the default 3 comments given in the mockup.
-
-// let commentArray = [
-//     {
-//         name:"Michael Lyons",
-//         date: "12/18/2018",
-//         statement:"They BLEW the ROOF off their last show, once everyone started figuring out they were going. This is still simply the greatest opening of concert I have EVER witnessed.",
-//     },
-//     {
-//         name: "Gary Wong",
-//         date: "12/12/2018",
-//         statement: "Every time I see him shred I feel so motivated to get off my couch and hop on my board. He's so talented! I wish I can ride like him one day so I can really enjoy myself.",
-//     },
-//     {
-//         name: "Theodore Duncan",
-//         date: "11/15/2018",
-//         statement: "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He's definitely my favourite ever!"
-//     }
-// ];
-
-
+// This function fetches the data from the API and invokes other functions to populate it.
 
 let bandsiteAPI = 'https://project-1-api.herokuapp.com/';
 let commentEndpoint = 'comments';
@@ -111,17 +91,11 @@ let duplicate = (arr) => {
         delComment.setAttribute('data-comment_id', element.id);
         delComment.addEventListener('click', deleteThisComment)
         likeDelete.appendChild(delComment);
-    
+
 });
 }
 
-//Invoking(calling) the function with the array as the argument.
-
-// duplicate(commentArray);
-
-
 //Creating an Event Handler to add new comment.
-// This function also clears up the old history on saved comments and builds a new array with the latest comment on top.
 
 let submitButton = document.querySelector('#submit-comment');
 let textName = document.querySelector('#full-name');
@@ -130,8 +104,6 @@ let textComment = document.querySelector('#input-comment');
 let displayComment = event => {
     event.preventDefault();
 
-    // document.querySelector('.saved-comment').innerHTML = '';
-
     let item = document.createElement("h4");
     let textName = document.querySelector('#full-name').value;
     item.innerText = textName;
@@ -139,17 +111,11 @@ let displayComment = event => {
     let item2 = document.createElement("p");
     let textComment = document.querySelector("#input-comment").value;
     item2.innerText = textComment;
-
-    // let today = new Date();
-    // let month = today.getMonth() +1;
-    // let year = today.getFullYear();
-    // let date = today.getDate();
     
     let newCom = {
-	"name": textName,
-	"comment": textComment,
-    }
-
+	    "name": textName,
+	    "comment": textComment,
+        }
  
     axios.post(`${bandsiteAPI}${commentEndpoint}${keyApi}`, newCom, {headers: {'Content-Type': 'application/json'}} )
     .then(response => {
@@ -161,7 +127,6 @@ let displayComment = event => {
         console.log(err)
     })
 
-     
     document.querySelector('#full-name').value = '';
     document.querySelector('#input-comment').value = '';
 }
@@ -197,10 +162,26 @@ function deleteThisComment(e) {
 }
 
 
+//This function prevents users from submitting empty comments.
+submitButton.disabled = true;
+
+const enableSubmitBtn = () => {
+    console.log('blured')
+    let textNameInput = document.querySelector("#full-name").value;
+    let textCommentInput = document.querySelector("#input-comment").value;
+
+    if (textNameInput ==="" || textCommentInput==="") {
+        submitButton.disabled = true;
+    } else {
+        submitButton.disabled = false;
+    }
+}
+
+document.querySelector("#full-name").addEventListener('keyup', enableSubmitBtn)
+document.querySelector("#input-comment").addEventListener('keyup', enableSubmitBtn)
+
 
 //Invoke(call) the function when the button is clicked.
 
 submitButton.addEventListener('click', displayComment);
 
-
-// delComment.addEventListener('click', deleteComment(id))
